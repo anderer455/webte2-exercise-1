@@ -1,0 +1,32 @@
+.center
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+#uploadForm{
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.container-fluid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#fileList {
+    margin-bottom: 60px;
+}
+.sources {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#btn {
+   display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -11,7 +11,7 @@ try {
         throw new RuntimeException('Invalid parameters.');
     }
 
-    // Check $_FILES['upFile']['error'] value.
+    // Check $_FILES['upfile']['error'] value.
     switch ($_FILES['upFile']['error']) {
         case UPLOAD_ERR_OK:
             break;
@@ -29,17 +29,17 @@ try {
         throw new RuntimeException('Exceeded filesize limit.');
     }
 
-    // DO NOT TRUST $_FILES['upFile']['mime'] VALUE !!
+    // DO NOT TRUST $_FILES['upfile']['mime'] VALUE !!
     // Check MIME Type by yourself.
     $ext = pathinfo($_FILES['upFile']['name'], PATHINFO_EXTENSION);
 
 
     // You should name it uniquely.
-    // DO NOT USE $_FILES['upFile']['name'] WITHOUT ANY VALIDATION !!
+    // DO NOT USE $_FILES['upfile']['name'] WITHOUT ANY VALIDATION !!
     // On this example, obtain safe unique name from its binary data.
     if (!move_uploaded_file(
         $_FILES['upFile']['tmp_name'], $_POST['filename'] . '_' . time() . "." . $ext
-        )) {
+    )) {
         throw new RuntimeException('Failed to move uploaded file.');
     }
     $response = array(
